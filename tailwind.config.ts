@@ -15,6 +15,13 @@ const config: Config = {
       },
     },
   },
+  colors: {
+    PANTONE_1: "#F1EEEB",
+    PANTONE_2: "#E1DAD0",
+    PANTONE_3: "#7B736B",
+    PANTONE_4: "#555555",
+    PANTONE_5: "#1C1C1C",
+  },
   plugins: [],
 };
 export default config;

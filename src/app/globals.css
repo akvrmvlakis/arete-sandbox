@@ -29,5 +29,28 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }
+
+section {
+  height: 100vh;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ 
+@media (prefers-reduced-motion: no-preference) {
+   .rounded-text:hover {
+     animation: spin 6s infinite linear;
+   }
+
+   @keyframes spin {
+     to {
+       rotate: 360deg;
+     }
+   }
+ }
