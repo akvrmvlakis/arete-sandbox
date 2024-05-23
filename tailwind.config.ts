@@ -13,15 +13,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        PANTONE_1: "#F1EEEB",
+        PANTONE_2: "#E1DAD0",
+        PANTONE_3: "#7B736B",
+        PANTONE_4: "#555555",
+        PANTONE_5: "#1C1C1C",
+      },
     },
   },
-  colors: {
-    PANTONE_1: "#F1EEEB",
-    PANTONE_2: "#E1DAD0",
-    PANTONE_3: "#7B736B",
-    PANTONE_4: "#555555",
-    PANTONE_5: "#1C1C1C",
-  },
+
   plugins: [],
 };
 export default config;
