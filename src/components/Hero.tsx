@@ -26,7 +26,7 @@ const Hero = (props: Props) => {
           />
         </span>
       </div>
-      <div className="fixed z-1 flex justify-center items-center w-full left-0 bottom-0 min-h-full sm:hidden md:block">
+      <div className="fixed z-1  justify-center items-center w-full left-0 bottom-0 min-h-full hidden md:flex">
         <video className={"sm:hidden md:block max-w-auto"} autoPlay loop muted>
           <source src="/videos/background_header.mp4" type="video/mp4" />
         </video>
