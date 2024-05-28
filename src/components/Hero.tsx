@@ -14,7 +14,7 @@ const Hero = (props: Props) => {
           height={40}
         />
 
-        <h1 className="mt-[131px] max-w-[768px] text-[90px] leading-none text-center font-bold">
+        <h1 className="mt-[131px] max-w-[768px] sm:text-[48px] md:text-[90px] leading-none text-center font-bold">
           DESIGNS TAILORED FOR YOU
         </h1>
         <span className="rounded-text mt-[63px] cursor-pointer">
@@ -26,8 +26,8 @@ const Hero = (props: Props) => {
           />
         </span>
       </div>
-      <div className="fixed -z-1 flex justify-center items-center w-full left-0 bottom-0 min-h-full sm:hidden md:block">
-        <video autoPlay className="max-w-auto " loop muted>
+      <div className="fixed z-1 flex justify-center items-center w-full left-0 bottom-0 min-h-full sm:hidden md:block">
+        <video className={"sm:hidden md:block max-w-auto"} autoPlay loop muted>
           <source src="/videos/background_header.mp4" type="video/mp4" />
         </video>
       </div>
