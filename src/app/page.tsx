@@ -11,6 +11,9 @@ export default function Home() {
       <Hero />
       <main className="bg-PANTONE_5 w-full flex flex-col z-10">
         {/* <section>Project slide</section> */}
+        <section className="w-full m-auto">
+          <Gallery />
+        </section>
         <section className="container m-auto">
           <Services />
         </section>
