@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -20,7 +21,9 @@ const Services = (props: Props) => {
                 to your unique identity.
               </div>
               <div className="flex gap-2 justify-center self-start mt-8 leading-[150%]">
-                <div>Get in touch</div>
+                <Link href="#contact">
+                  <div>Get in touch</div>
+                </Link>
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/995873ce168effd516d1f061a4cc47794eaa9edb01fc3435ecc7fd08fd4d7411?apiKey=dbbb3cb1ff2242fd8586eb6e7699f3b4&"
@@ -39,7 +42,9 @@ const Services = (props: Props) => {
                 ensuring seamless user experiences.
               </div>
               <div className="flex gap-2 justify-center self-start mt-8 leading-[150%]">
-                <div>Get in touch</div>
+                <Link href="#contact">
+                  <div>Get in touch</div>
+                </Link>
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/995873ce168effd516d1f061a4cc47794eaa9edb01fc3435ecc7fd08fd4d7411?apiKey=dbbb3cb1ff2242fd8586eb6e7699f3b4&"
@@ -58,7 +63,9 @@ const Services = (props: Props) => {
                 for all devices.
               </div>
               <div className="flex gap-2 justify-center self-start mt-8 leading-[150%]">
-                <div>Get in touch</div>
+                <Link href="#contact">
+                  <div>Get in touch</div>
+                </Link>
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/995873ce168effd516d1f061a4cc47794eaa9edb01fc3435ecc7fd08fd4d7411?apiKey=dbbb3cb1ff2242fd8586eb6e7699f3b4&"

@@ -25,13 +25,15 @@ const Hero = (props: Props) => {
           DESIGNS TAILORED FOR YOU
         </h1>
         <span className="rounded-text mt-[63px] cursor-pointer">
-          <Image
-            src={"/images/roundtext.svg"}
-            alt="Arete studio"
-            width={89}
-            height={89}
-            className=" md:w-[120px] md:h-[120px]"
-          />
+          <Link href="#contact">
+            <Image
+              src={"/images/roundtext.svg"}
+              alt="Arete studio"
+              width={89}
+              height={89}
+              className=" md:w-[120px] md:h-[120px]"
+            />
+          </Link>
         </span>
 
         <Menu />
