@@ -12,8 +12,9 @@ export default function Footer({}: Props) {
             <div className="flex flex-col items-center">
               <Link href="mailto:info@aretestudio.co">
                 <div>info@aretestudio.co</div>
+
+                <div>@_aretestudio</div>
               </Link>
-              <div>@_aretestudio</div>
             </div>
           </div>
           <div className="w-[350px] md:w-auto flex items-center justify-center  text-center text-[48px] md:text-[90px] font-bold uppercase leading-[48px]">
@@ -21,9 +22,15 @@ export default function Footer({}: Props) {
           </div>
           <div className="">
             <div className="flex flex-col grow items-cente">
-              <div>OUR SERVICES</div>
-              <div>ABOUT</div>
-              <div>PROJECTS</div>
+              <Link href="#services">
+                <div>OUR SERVICES</div>
+              </Link>
+              <Link href="#about">
+                <div>ABOUT</div>
+              </Link>
+              <Link href="#projects">
+                <div>PROJECTS</div>
+              </Link>
             </div>
           </div>
         </div>
