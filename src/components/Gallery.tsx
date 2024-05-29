@@ -6,37 +6,9 @@ import { Galleria } from "primereact/galleria";
 import { Checkbox } from "primereact/checkbox";
 import { RadioButton } from "primereact/radiobutton";
 import { classNames } from "primereact/utils";
-export const PhotoService = {
-  getData() {
-    return [
-      {
-        itemImageSrc: "/projects/manor.png",
-        thumbnailImageSrc: "/projects/manor.png",
-        alt: "Manor media",
-        title: "Manor media",
-      },
-      {
-        itemImageSrc: "/projects/ink.jpeg",
-        thumbnailImageSrc: "/projects/ink.jpeg",
-        alt: "Ink",
-        title: "Ink",
-      },
-      {
-        itemImageSrc: "/projects/thog.jpeg",
-        thumbnailImageSrc: "/projects/thog.jpeg",
-        alt: "Thog",
-        title: "Thog",
-      },
-    ];
-  },
 
-  getImages() {
-    return Promise.resolve(this.getData());
-  },
-};
-
-export default function Gallery() {
-  const [images, setImages] = useState(null);
+export default function Gallery({ data }) {
+  const [images, setImages] = useState(data);
   const responsiveOptions = [
     {
       breakpoint: "991px",
@@ -51,10 +23,6 @@ export default function Gallery() {
       numVisible: 1,
     },
   ];
-
-  useEffect(() => {
-    PhotoService.getImages().then((data) => setImages(data));
-  }, []);
 
   const itemTemplate = (item) => {
     return (
@@ -75,7 +43,7 @@ export default function Gallery() {
   return (
     <Galleria
       pt={Tailwind.galleria}
-      value={images}
+      value={data}
       responsiveOptions={responsiveOptions}
       numVisible={5}
       // style={{ maxWidth: "640px" }}
