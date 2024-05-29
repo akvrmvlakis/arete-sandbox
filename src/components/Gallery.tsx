@@ -99,11 +99,11 @@ const Tailwind = {
     // : "mr-2 bg-white w-4 h-4 rounded-full",
     indicator: ({ context }) => ({
       className: classNames(
-        "z-1 w-4 h-4 transition duration-200 rounded-full bg-black",
-        "focus:outline-none focus:outline-offset-0 focus:shadow-[0_0_0_0.2rem_rgba(191,219,254,1)] dark:focus:shadow-[0_0_0_0.2rem_rgba(147,197,253,0.5)]",
+        "z-1 w-4 h-4 transition duration-200 rounded-full ",
+        "focus:outline-none focus:outline-offset-0",
         {
-          "bg-white": !context?.highlighted,
-          "bg-white hover:bg-blue-600": context?.highlighted,
+          "bg-PANTONE_5": !context?.highlighted,
+          "bg-white": context?.highlighted,
         }
       ),
     }),

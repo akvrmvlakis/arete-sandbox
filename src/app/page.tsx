@@ -50,15 +50,12 @@ export default function Home() {
   return (
     <div className=" bg-black flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
       <Hero />
-      <main className="bg-PANTONE_5 w-full flex flex-col z-10">
+      <main className="bg-PANTONE_5 z-30 w-full flex flex-col z-10">
         {/* <section>Project slide</section> */}
-        <section
-          id="projects"
-          className="w-full h-full m-auto max-h-[80vh] bg-red"
-        >
+        <section id="projects" className="w-full m-auto h-[80vh] bg-red">
           <Gallery data={photos} />
         </section>
-        <section id="services" className="container m-auto">
+        <section id="services" className="container h-[80vh] m-auto">
           <Services />
         </section>
         <section
@@ -67,12 +64,12 @@ export default function Home() {
         >
           <Gallery data={photos2} />
         </section>
-        <section id="about" className="container m-auto">
+        <section id="about" className="container h-[80vh]r m-auto">
           <About />
         </section>
         <section
           id="contact"
-          className="container m-auto border-t-[2px] border-t-white"
+          className="container m-auto border-t-[2px] h-[80vh] border-t-white"
         >
           <Contact />
         </section>
