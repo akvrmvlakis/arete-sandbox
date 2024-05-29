@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <div className=" bg-PANTONE_5 flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
+    <div className=" bg-black flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
       <Hero />
       <main className="bg-PANTONE_5 w-full flex flex-col z-10">
         {/* <section>Project slide</section> */}
