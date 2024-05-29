@@ -12,18 +12,21 @@ export default function Home() {
       thumbnailImageSrc: "/projects/manor.png",
       alt: "Manor media",
       title: "Manor media",
+      link: "https://manor.studio/",
     },
     {
       itemImageSrc: "/projects/ink.jpeg",
       thumbnailImageSrc: "/projects/ink.jpeg",
       alt: "Ink",
       title: "Ink",
+      link: "https://www.ink.studio/",
     },
     {
       itemImageSrc: "/projects/thog.jpeg",
       thumbnailImageSrc: "/projects/thog.jpeg",
       alt: "Thog",
       title: "Thog",
+      link: "https://thehandofgod.co/",
     },
   ];
   const photos2 = [
@@ -32,18 +35,21 @@ export default function Home() {
       thumbnailImageSrc: "/projects/manor1.jpeg",
       alt: "Manor media",
       title: "Manor media",
+      link: "https://manor.studio/",
     },
     {
       itemImageSrc: "/projects/ink1.jpeg",
       thumbnailImageSrc: "/projects/ink1.jpeg",
       alt: "Ink",
       title: "Ink",
+      link: "https://www.ink.studio/",
     },
     {
       itemImageSrc: "/projects/thog1.jpeg",
       thumbnailImageSrc: "/projects/thog1.jpeg",
       alt: "Thog",
       title: "Thog",
+      link: "https://thehandofgod.co/",
     },
   ];
 

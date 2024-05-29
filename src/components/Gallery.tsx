@@ -6,6 +6,7 @@ import { Galleria } from "primereact/galleria";
 import { Checkbox } from "primereact/checkbox";
 import { RadioButton } from "primereact/radiobutton";
 import { classNames } from "primereact/utils";
+import Link from "next/link";
 
 export default function Gallery({ data }) {
   const [images, setImages] = useState(data);
@@ -26,13 +27,15 @@ export default function Gallery({ data }) {
 
   const itemTemplate = (item) => {
     return (
-      <Image
-        src={item.itemImageSrc}
-        className="w-full object-cover h-[80vh]  md:h-[90vh]"
-        width={200}
-        height={200}
-        alt={item.alt}
-      />
+      <Link href={item.link} target="blank">
+        <Image
+          src={item.itemImageSrc}
+          className="w-full object-cover h-[80vh]  md:h-[90vh]"
+          width={200}
+          height={200}
+          alt={item.alt}
+        />
+      </Link>
     );
   };
 
