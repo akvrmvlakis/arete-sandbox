@@ -7,7 +7,7 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <header className="container relative w-full items-center flex flex-col pb-[80px] md:pb-[80px] md:pt-[34px]">
+    <header className="container relative w-full items-center flex flex-col pb-[80px] md:pb-[80px] md:pt-[34px] h-auto lg:h-[103vh]">
       <div className="relative w-full  z-10 flex flex-col items-center">
         <Link
           className="flex p-4 md:p-[51px] mb-[58px] md:mb-[80px]"

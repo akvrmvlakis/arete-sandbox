@@ -18,10 +18,10 @@ function Menu() {
 
   return (
     <nav className="mt-[45px] w-full gap-4 flex-1 flex flex-col items-center justify-between md:flex-row md:max-w-[1024px]">
-      <MenuItem link="/services" name="Services" />
-      <MenuItem link="/services" name="About" />
-      <MenuItem link="/services" name="Project" />
-      <MenuItem link="/services" name="Contact" />
+      <MenuItem link="#services" name="Services" />
+      <MenuItem link="#about" name="About" />
+      <MenuItem link="#projects" name="Projects" />
+      <MenuItem link="#contact" name="Contact" />
     </nav>
   );
 }

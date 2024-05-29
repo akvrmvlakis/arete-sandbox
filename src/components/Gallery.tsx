@@ -54,7 +54,7 @@ export default function Gallery() {
     return (
       <Image
         src={item.itemImageSrc}
-        className="w-full object-cover max-h-[900px]"
+        className="w-full object-cover h-[80vh]  md:h-[90vh]"
         width={200}
         height={200}
         alt={item.alt}
