@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -9,7 +10,9 @@ export default function Footer({}: Props) {
         <div className="flex gap-[68px] text-zinc-900 items-center justify-between max-md:flex-col">
           <div className="flex flex-col gap-4 max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-center">
-              <div>info@aretestudio.co</div>
+              <Link href="mailto:info@aretestudio.co">
+                <div>info@aretestudio.co</div>
+              </Link>
               <div>@_aretestudio</div>
             </div>
           </div>
