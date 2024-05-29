@@ -16,10 +16,16 @@ export const PhotoService = {
         title: "Manor media",
       },
       {
-        itemImageSrc: "/projects/ink.png",
-        thumbnailImageSrc: "/projects/ink.png",
-        alt: "Manor media",
-        title: "Manor media",
+        itemImageSrc: "/projects/ink.jpeg",
+        thumbnailImageSrc: "/projects/ink.jpeg",
+        alt: "Ink",
+        title: "Ink",
+      },
+      {
+        itemImageSrc: "/projects/thog.jpeg",
+        thumbnailImageSrc: "/projects/thog.jpeg",
+        alt: "Thog",
+        title: "Thog",
       },
     ];
   },

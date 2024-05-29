@@ -11,18 +11,21 @@ export default function Home() {
       <Hero />
       <main className="bg-PANTONE_5 w-full flex flex-col z-10">
         {/* <section>Project slide</section> */}
-        <section className="w-full h-full m-auto max-h-[80vh] bg-red">
-          <Gallery />
-        </section>
-        <section id="services" className="container m-auto">
-          <Services />
-        </section>
         <section
           id="projects"
           className="w-full h-full m-auto max-h-[80vh] bg-red"
         >
           <Gallery />
         </section>
+        <section id="services" className="container m-auto">
+          <Services />
+        </section>
+        {/* <section
+          id="projects"
+          className="w-full h-full m-auto max-h-[80vh] bg-red"
+        >
+          <Gallery />
+        </section> */}
         <section id="about" className="container m-auto">
           <About />
         </section>
