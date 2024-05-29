@@ -38,7 +38,7 @@ const Hero = (props: Props) => {
 
         <Menu />
       </div>
-      <div className="fixed  h-[70vh] justify-center items-center w-full top-0 left-0   hidden xl:flex">
+      <div className="fixed  h-[60vh] justify-center items-center w-full top-0 left-0   hidden xl:flex">
         <video className="w-full" autoPlay loop muted>
           <source src="/videos/background_header.mp4" type="video/mp4" />
         </video>

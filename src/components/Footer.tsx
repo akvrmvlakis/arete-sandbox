@@ -5,7 +5,7 @@ type Props = {};
 
 export default function Footer({}: Props) {
   return (
-    <footer className="w-full flex flex-col justify-center  bg-stone-500">
+    <footer className="z-30 w-full flex flex-col justify-center  bg-stone-500">
       <div className=" px-[10px]  py-[80px] md:px-[64px]">
         <div className="flex gap-[68px] text-zinc-900 items-center justify-between max-md:flex-col">
           <div className="flex flex-col gap-4 max-md:ml-0 max-md:w-full">
