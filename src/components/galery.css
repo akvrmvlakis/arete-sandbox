@@ -11,13 +11,13 @@
    list-style: none;
    text-align: center;
    /* background: aliceblue; */
-   right: 0;
+   right: -40px;
  }
  .slick-dots li {
    position: relative;
    display: inline-block;
-   width: 20px;
-   height: 20px;
+   width: 17px;
+   height: 17px;
    padding: 0;
    cursor: pointer;
    background:#1C1C1C;
@@ -33,14 +33,7 @@
  }
 
  .slick-dots li.slick-active{
-   position: relative;
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   padding: 0;
-   cursor: pointer;
    background: #F1EEEB;
-   border-radius: 100%;
  }
 
 
