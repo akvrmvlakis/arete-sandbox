@@ -8,8 +8,8 @@ import Services from "@/components/Services";
 export default function Home() {
   const photos = [
     {
-      itemImageSrc: "/projects/manor.png",
-      thumbnailImageSrc: "/projects/manor.png",
+      itemImageSrc: "/projects/manor.jpeg",
+      thumbnailImageSrc: "/projects/manor.jpeg",
       alt: "Manor media",
       title: "Manor media",
       link: "https://manor.studio/",
