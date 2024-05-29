@@ -33,7 +33,7 @@ export default function Gallery({ data }) {
           <Link href={item.link} target="blank">
             <Image
               src={item.itemImageSrc}
-              className="w-full object-cover h-[80vh]  md:h-[90vh]"
+              className="!w-full object-cover h-auto md:h-[90vh]"
               width={200}
               height={200}
               alt={item.alt}
