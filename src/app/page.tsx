@@ -58,19 +58,16 @@ export default function Home() {
       <Hero />
       <main className="bg-PANTONE_5 z-30 w-full flex flex-col z-10">
         {/* <section>Project slide</section> */}
-        <section id="projects" className="w-full m-auto h-[80vh] bg-red">
+        <section id="projects" className="w-full m-auto  bg-red">
           <Gallery data={photos} />
         </section>
-        <section id="services" className="container h-[80vh] m-auto">
+        <section id="services" className="container m-auto">
           <Services />
         </section>
-        <section
-          id="projects"
-          className="w-full h-full m-auto max-h-[80vh] bg-red"
-        >
+        <section id="projects" className="w-full h-full m-auto bg-red">
           <Gallery data={photos2} />
         </section>
-        <section id="about" className="container h-[80vh]r m-auto">
+        <section id="about" className="container m-auto">
           <About />
         </section>
         <section

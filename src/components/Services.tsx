@@ -5,8 +5,8 @@ type Props = {};
 
 const Services = (props: Props) => {
   return (
-    <div className="flex flex-col px-16 py-20 PANTONE_5 max-md:px-5">
-      <div className="mt-8 text-xl font-bold leading-7 text-white uppercase max-md:max-w-full">
+    <div className="flex flex-col  PANTONE_5 px-[64px] py-[112px]">
+      <div className="text-xl font-bold leading-7 text-white uppercase max-md:max-w-full">
         OUR SERVICES
       </div>
       <div className="mt-9 max-md:max-w-full">
