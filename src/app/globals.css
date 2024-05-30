@@ -1,5 +1,18 @@
 
+/* 
+@import url(https://db.onlinewebfonts.com/c/b851561fd22deabc04e65e994e257e51?family=Pragmatica+W01+Extended+Bold);
+@import url(https://db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue+Regular); */
 
+
+@font-face {
+  font-family: "Pragmatica W01 Extended Bold";
+  src: url("https://db.onlinewebfonts.com/t/b851561fd22deabc04e65e994e257e51.eot");
+  src: url("https://db.onlinewebfonts.com/t/b851561fd22deabc04e65e994e257e51.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/b851561fd22deabc04e65e994e257e51.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/b851561fd22deabc04e65e994e257e51.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/b851561fd22deabc04e65e994e257e51.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/b851561fd22deabc04e65e994e257e51.svg#Pragmatica W01 Extended Bold")format("svg");
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +30,12 @@
         overflow: hidden;
         z-index: 0;
 }
+h1 {
+  font-family: "Pragmatica W01 Extended Bold";
+}
+
+
+
 
 
 

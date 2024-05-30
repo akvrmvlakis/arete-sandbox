@@ -56,18 +56,18 @@ export default function Home() {
   return (
     <div className="bg-black flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
       <Hero />
-      <main className="bg-PANTONE_5 z-30 w-full flex flex-col z-10">
+      <main className="bg-PANTONE_5 z-30 w-full flex flex-col z-10 text-[Helvetica Neue Regular]">
         {/* <section>Project slide</section> */}
         <section id="projects" className="w-full m-auto  bg-red">
           <Gallery data={photos} />
         </section>
-        <section id="services" className="container m-auto">
+        <section id="services" className=" m-auto">
           <Services />
         </section>
         <section id="projects" className="w-full h-full m-auto bg-red">
           <Gallery data={photos2} />
         </section>
-        <section id="about" className="container m-auto">
+        <section id="about" className=" m-auto">
           <About />
         </section>
         <section
