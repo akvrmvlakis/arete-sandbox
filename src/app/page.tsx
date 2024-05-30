@@ -54,7 +54,7 @@ export default function Home() {
   ];
 
   return (
-    <div className=" bg-black flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
+    <div className="bg-PANTONE_5 flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
       <Hero />
       <main className="bg-PANTONE_5 z-30 w-full flex flex-col z-10">
         {/* <section>Project slide</section> */}
@@ -78,6 +78,11 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <div className="video-container   hidden xl:flex">
+        <video autoPlay loop muted>
+          <source src="/videos/background_header.mp4" type="video/mp4" />
+        </video>
+      </div>
     </div>
   );
 }
