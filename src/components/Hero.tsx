@@ -38,8 +38,8 @@ const Hero = (props: Props) => {
 
         <Menu />
       </div>
-      <div className="video-container fixed hidden xl:flex">
-        <video className="absolute" autoPlay loop muted>
+      <div className="video-container fixed justify-center hidden xl:flex">
+        <video className="absolute h-[100vh] max-w-none" autoPlay loop muted>
           <source src="/videos/background_header.mp4" type="video/mp4" />
         </video>
       </div>
