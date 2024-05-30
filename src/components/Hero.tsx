@@ -7,8 +7,8 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <header className="container relative w-full items-center flex flex-col pb-[80px] md:pb-[80px] md:pt-[34px]">
-      <div className="relative w-full  z-10 flex flex-col items-center mb-[80px]">
+    <header className="container relative w-full items-center flex flex-col pb-[80px] md:pb-[80px] pt-[34px] lg:pt-0">
+      <div className="relative w-full  z-10 flex flex-col items-center ">
         <Link
           className="flex p-4 md:p-[51px] mb-[58px] md:mb-[80px]"
           href={"/"}
@@ -38,8 +38,8 @@ const Hero = (props: Props) => {
 
         <Menu />
       </div>
-      <div className="video-container absolute hidden xl:flex">
-        <video autoPlay loop muted>
+      <div className="video-container fixed hidden xl:flex">
+        <video className="absolute" autoPlay loop muted>
           <source src="/videos/background_header.mp4" type="video/mp4" />
         </video>
       </div>
