@@ -9,7 +9,7 @@ type Props = {
 function Menu() {
   const MenuItem = ({ name, link }: Props) => (
     <Link
-      className="min-w-[244px] w-full items-center text-center p-4 border-b-[4px] border-b-[#ffffff45] uppercase  hover:border-b-white"
+      className="min-w-[244px] w-full items-center text-center text-[Helvetica Neue Regular] p-4 border-b-[4px] border-b-[#ffffff45] uppercase  hover:border-b-white"
       href={link}
     >
       {name}

@@ -45,7 +45,7 @@ export default function Gallery({ data }) {
   };
 
   return (
-    <div className="container">
+    <div className="w-full">
       <Slider {...settings}>{List()}</Slider>
     </div>
   );
