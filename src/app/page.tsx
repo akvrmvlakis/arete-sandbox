@@ -61,18 +61,18 @@ export default function Home() {
         <section id="projects" className="w-full m-auto  bg-red">
           <Gallery data={photos} />
         </section>
-        <section id="services" className=" m-auto">
+        <section id="services" className="px-1 md:px-8 m-auto">
           <Services />
         </section>
         <section id="projects" className="w-full h-full m-auto bg-red">
           <Gallery data={photos2} />
         </section>
-        <section id="about" className=" m-auto">
+        <section id="about" className="px-1 w-full md:px-8 m-auto">
           <About />
         </section>
         <section
           id="contact"
-          className="container m-auto border-t-[2px] h-[80vh] border-t-white"
+          className="w-full px-1 md:px-8 m-auto border-t-[2px] h-[80vh] border-t-white"
         >
           <Contact />
         </section>
