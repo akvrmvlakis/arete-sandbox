@@ -21,7 +21,7 @@ export default function Footer({}: Props) {
             ARETE STUDIO
           </div>
           <div className="">
-            <div className="flex flex-col grow items-cente">
+            <div className="flex flex-col grow items-center font-[Pragmatica W01 Extended Bold] text-PANTONE_1 ">
               <Link href="#services">
                 <div>OUR SERVICES</div>
               </Link>
