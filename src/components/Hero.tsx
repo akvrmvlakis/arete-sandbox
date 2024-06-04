@@ -21,7 +21,7 @@ const Hero = (props: Props) => {
             className="w-[236px] h-[35.53] md:w-[266px] md:h-[40]"
           />
         </Link>
-        <h1 className=" max-w-[340px]  md:max-w-[800px] text-[48px]  md:text-[90px] leading-none text-center font-bold">
+        <h1 className=" max-w-[340px]  md:max-w-[800px] text-[48px] text-PANTONE_1  md:text-[90px] leading-none text-center font-bold">
           DESIGNS TAILORED FOR YOU
         </h1>
         <span className="rounded-text mt-[63px] cursor-pointer">
