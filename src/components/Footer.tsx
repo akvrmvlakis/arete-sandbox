@@ -11,7 +11,7 @@ export default function Footer({}: Props) {
           <div className="flex flex-col gap-4 max-md:ml-0 max-md:w-full ">
             <div className="flex flex-col items-center">
               <Link href="mailto:olia@aretestudio.co">
-                <div>info@aretestudio.co</div>
+                <div>olia@aretestudio.co</div>
 
                 <div>@_aretestudio</div>
               </Link>
