@@ -10,7 +10,7 @@ export default function Footer({}: Props) {
         <div className="flex gap-[68px] font-[Pragmatica W01 Extended Bold] text-zinc-900 items-center justify-between max-md:flex-col">
           <div className="flex flex-col gap-4 max-md:ml-0 max-md:w-full ">
             <div className="flex flex-col items-center">
-              <Link href="mailto:info@aretestudio.co">
+              <Link href="mailto:olia@aretestudio.co">
                 <div>info@aretestudio.co</div>
 
                 <div>@_aretestudio</div>
