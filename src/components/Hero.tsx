@@ -23,7 +23,7 @@ const Hero = (props: Props) => {
             />
           </Link>
           <h1 className=" max-w-[340px]  md:max-w-[800px] text-[48px] text-PANTONE_1  md:text-[90px] leading-none text-center font-bold">
-            DESIGNS TAILORED FOR YOU
+            DESIGNS TAILORED FOR YOU.
           </h1>
           <span className="rounded-text mt-[63px] cursor-pointer">
             <Link href="#contact">
