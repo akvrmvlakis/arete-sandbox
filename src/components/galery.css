@@ -1,46 +1,63 @@
-
-
-
- .slick-dots {
-   position: absolute;
-   bottom: 20px;
-   display: block;
-   width: 200px;
-   padding: 0;
-   margin: 0;
-   list-style: none;
-   text-align: center;
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
   display: flex;
-    justify-content: end;
-    padding-right: 10px;
-   right: 0px;
- }
- .slick-dots li {
-   position: relative;
-   display: inline-block;
-   width: 17px;
-   height: 17px;
-   padding: 0;
-   cursor: pointer;
-   background:#1C1C1C;
-   border-radius: 100%;
- }
+  justify-content: end;
+  padding-right: 10px;
+  right: 0px;
+}
 
+@media (max-width: 640px) {
+  .slick-dots {
+    position: absolute;
+    /* bottom: 24px;
+    right: 23px; */
+    display: flex !important;
+    width: 89px;
+    height: 37px;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+    gap: 9px;
+    left: 283px;
+    top: 639px;
+    /* display: flex;
+    flex-direction: row;
+    align-items: flex-start; */
+  }
+}
 
+.slick-dots li {
+  /* padding: 10px; */
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  cursor: pointer;
+  background: #1c1c1c;
+  border-radius: 100%;
+}
 
- .slick-dots li button:before {
-   opacity: .75;
-   color: black;
-   display: none;
- }
+.slick-dots li button:before {
+  opacity: 0.75;
+  color: black;
+  display: none;
+}
 
- .slick-dots li.slick-active{
-   background: #F1EEEB;
- }
+.slick-dots li.slick-active {
+  background: #f1eeeb;
+}
 
-
-
-
-
-
-
+.manor-title::before {
+  content: "MANOR";
+  color: #fff;
+  font-size: 2rem;
+}
