@@ -67,12 +67,16 @@ export default function Home() {
         <section id="projects" className="w-full h-full m-auto bg-red">
           <Gallery data={photos2} />
         </section>
-        <section id="about" className="px-1 w-full md:px-8 m-auto">
+        <section id="about" className="mx-[44px] md:mx-[64px]">
           <About />
         </section>
         <section
+          id="hr"
+          className="border-t-[2px] border-t-white mx-[44px] md:mx-[64px] my-[36px]"
+        ></section>
+        <section
           id="contact"
-          className="w-full px-1 md:px-8 m-auto border-t-[2px] h-[80vh] border-t-white"
+          className=" flex justify-center mx-[44px] md:mx-[64px]"
         >
           <Contact />
         </section>

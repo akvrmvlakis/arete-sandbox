@@ -37,8 +37,8 @@ const Hero = (props: Props) => {
             <Image
               src={"/images/roundtext.svg"}
               alt="Arete studio"
-              width={89}
-              height={89}
+              width={66}
+              height={66}
               className=" w-[65.67px] h-[65.67px] md:w-[120px] md:h-[120px]"
             />
           </Link>

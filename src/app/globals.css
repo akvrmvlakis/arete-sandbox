@@ -15,12 +15,6 @@
   overflow: hidden;
   z-index: 0;
 }
-h1 {
-  font-family: "Pragmatica W01 Extended Bold";
-}
-footer {
-  font-family: "Pragmatica W01 Extended Bold";
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -48,13 +42,13 @@ body {
   }
 }
 
-section {
-  /* height: 100vh; */
+/* section {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 110px;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .rounded-text:hover {
