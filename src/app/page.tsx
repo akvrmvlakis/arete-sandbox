@@ -11,21 +11,21 @@ export default function Home() {
       itemImageSrc: "/projects/manor.jpeg",
       thumbnailImageSrc: "/projects/manor.jpeg",
       alt: "Manor media",
-      title: "Manor media",
+      title: "Manor.",
       link: "https://manor.studio/",
     },
     {
       itemImageSrc: "/projects/ink.jpeg",
       thumbnailImageSrc: "/projects/ink.jpeg",
       alt: "Ink",
-      title: "Ink",
+      title: "Ink.",
       link: "https://www.ink.studio/",
     },
     {
       itemImageSrc: "/projects/thog.jpeg",
       thumbnailImageSrc: "/projects/thog.jpeg",
       alt: "Thog",
-      title: "Thog",
+      title: "Thog.",
       link: "https://thehandofgod.co/",
     },
   ];
@@ -41,7 +41,7 @@ export default function Home() {
       itemImageSrc: "/projects/ink1.jpeg",
       thumbnailImageSrc: "/projects/ink1.jpeg",
       alt: "Ink",
-      title: "Ink",
+      title: "ink.studio",
       link: "https://www.ink.studio/",
     },
     {

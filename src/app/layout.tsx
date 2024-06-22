@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import "./globals.css";
 import { PrimeReactProvider } from "primereact/api";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const helveticaNeueRegular = localFont({
+  src: "../assets/fonts/helvetica_neue_regular.woff2",
+});
 
 export const metadata: Metadata = {
   title: "Arete studio",
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <PrimeReactProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={helveticaNeueRegular.className}>{children}</body>
       </html>
     </PrimeReactProvider>
   );

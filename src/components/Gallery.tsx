@@ -11,6 +11,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./galery.css";
+import localFont from "next/font/local";
+
+const pragmaticaW01ExtendedBold = localFont({
+  src: "../assets/fonts/pragmatica-w01-extended-bold.woff2",
+});
 
 export default function Gallery({ data }) {
   const [images, setImages] = useState(data);
@@ -29,7 +34,7 @@ export default function Gallery({ data }) {
   const List = (item) => {
     return data.map((item, i) => {
       return (
-        <div className="bg-red " key={i}>
+        <div className="bg-red relative" key={i}>
           <Link href={item.link} target="blank">
             <Image
               src={item.itemImageSrc}
@@ -39,6 +44,11 @@ export default function Gallery({ data }) {
               alt={item.alt}
             />
           </Link>
+          <div className={pragmaticaW01ExtendedBold.className}>
+            <h2 className="text-white uppercase text-2xl absolute md:bottom-[82px] md:right-[31px] bottom-[61px] right-[23px] ">
+              {item.title}
+            </h2>
+          </div>
         </div>
       );
     });
