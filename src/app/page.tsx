@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="bg-black flex z-10 w-full flex-col justify-center items-center ">
       <Hero />
-      <main className="bg-PANTONE_5 z-30 w-full flex flex-col text-[Helvetica Neue Regular]">
+      <main className="bg-PANTONE_5 z-30 w-full flex flex-col">
         {/* <section>Project slide</section> */}
         <section id="projects" className="w-full m-auto bg-red">
           <Gallery data={photos} />
