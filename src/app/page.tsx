@@ -74,7 +74,7 @@ export default function Home() {
           id="hr"
           className="border-t-[2px] border-t-white mx-[44px] md:mx-[64px] my-[36px]"
         ></section>
-        <section id="contact" className=" flex justify-center mx-[64px]">
+        <section id="contact" className="mx-[64px]">
           <Contact />
         </section>
       </main>

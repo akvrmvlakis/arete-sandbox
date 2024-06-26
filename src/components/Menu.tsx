@@ -17,7 +17,7 @@ function Menu() {
   );
 
   return (
-    <nav className="w-full gap-4 flex-1 flex flex-col px-[30px] md:mb-[80px] items-center justify-between md:flex-row md:max-w-[1024px]">
+    <nav className="mt-[45px] px-[30px] w-full gap-4 flex-1 flex flex-col items-center justify-between md:flex-row md:max-w-[1024px]">
       <MenuItem link="#services" name="Services" />
       <MenuItem link="#about" name="About" />
       <MenuItem link="#projects" name="Projects" />

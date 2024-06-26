@@ -12,39 +12,33 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <header className=" relative w-full min-h-screen items-center flex flex-col md:pt-[34px] lg:pt-0">
+    <header className=" relative w-full items-center flex flex-col pb-[80px] md:pb-[80px] md:pt-[34px] lg:pt-0">
       <div className="relative w-full z-10 flex flex-col items-center ">
-        <div>
-          <Link
-            className="flex md:py-[51px] py-[12px] mt-[14px] mb-[58px] md:mb-[80px] md:mt-[34px]"
-            href={"/"}
-          >
-            <Image
-              src={"/images/logo.svg"}
-              alt="Arete studio"
-              width={266}
-              height={40}
-              className="w-[200px] h-[35.53] md:w-[266px] md:h-[40]"
-            />
-          </Link>
-        </div>
-
-        <div className="mx-[28px] md:mx-[372px] md:mb-[39px]">
-          <h1 className="text-[48px] text-PANTONE_1  md:text-[90px] leading-none text-center font-bold">
-            <div className={pragmaticaW01ExtendedBold.className}>
-              DESIGNS TAILORED FOR YOU
-            </div>
-          </h1>
-        </div>
-
-        <span className="rounded-text mt-[44px] md:mb-[71px] mb-[87px] cursor-pointer">
+        <Link
+          className="flex p-4 md:p-[51px] mb-[58px] md:mb-[80px]"
+          href={"/"}
+        >
+          <Image
+            src={"/images/logo.svg"}
+            alt="Arete studio"
+            width={266}
+            height={40}
+            className="w-[200px] h-[35.53] md:w-[266px] md:h-[40]"
+          />
+        </Link>
+        <h1 className=" max-w-[340px] md:max-w-[800px] text-[48px] text-PANTONE_1  md:text-[90px] leading-none text-center font-bold">
+          <div className={pragmaticaW01ExtendedBold.className}>
+            DESIGNS TAILORED FOR YOU
+          </div>
+        </h1>
+        <span className="rounded-text mt-[63px] cursor-pointer">
           <Link href="#contact">
             <Image
               src={"/images/roundtext.svg"}
               alt="Arete studio"
-              width={89}
-              height={89}
-              className=" w-[65.67px] h-[65.67px] md:w-[120px] md:h-[120px]"
+              width={66}
+              height={66}
+              className=" md:w-[120px] md:h-[120px]"
             />
           </Link>
         </span>
@@ -52,7 +46,7 @@ const Hero = (props: Props) => {
         <Menu />
       </div>
       <div className="video-container px-1 md:px-8 absolute flex-col items-center justify-center flex">
-        <video className="absolute  max-w-none" autoPlay loop muted>
+        <video className="absolute max-w-none" autoPlay loop muted>
           <source src="/videos/background_header.mp4" type="video/mp4" />
         </video>
       </div>
