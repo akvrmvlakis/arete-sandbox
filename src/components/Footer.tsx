@@ -2,12 +2,12 @@ import Link from "next/link";
 import React from "react";
 import localFont from "next/font/local";
 
-const helveticaNeueRegular = localFont({
-  src: "../assets/fonts/helvetica_neue_regular.woff2",
-});
-
 const pragmaticaW01ExtendedBold = localFont({
   src: "../assets/fonts/pragmatica-w01-extended-bold.woff2",
+});
+
+const HelveticaNeueLight = localFont({
+  src: "../assets/fonts/HelveticaNeueLight.woff2",
 });
 
 type Props = {};
@@ -23,7 +23,7 @@ export default function Footer({}: Props) {
                 <div>
                   <Link
                     href="mailto:olia@aretestudio.co"
-                    className={helveticaNeueRegular.className}
+                    className={HelveticaNeueLight.className}
                   >
                     olia@aretestudio.co
                   </Link>
@@ -31,7 +31,7 @@ export default function Footer({}: Props) {
                 <div>
                   <Link
                     href="https://www.instagram.com/_aretestudio/"
-                    className={helveticaNeueRegular.className}
+                    className={HelveticaNeueLight.className}
                   >
                     @_aretestudio
                   </Link>
@@ -44,16 +44,13 @@ export default function Footer({}: Props) {
               ARETE STUDIO
             </div>
           </div>
-          <div className={helveticaNeueRegular.className}>
+          <div className={HelveticaNeueLight.className}>
             <div className="flex flex-col grow items-center md:items-end">
               <Link href="#services">
                 <div>OUR SERVICES</div>
               </Link>
               <Link href="#about">
                 <div>ABOUT</div>
-              </Link>
-              <Link href="#projects">
-                <div>PROJECTS</div>
               </Link>
               <Link href="#t&c">
                 <div>T & C</div>
