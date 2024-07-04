@@ -44,6 +44,17 @@ export default function Gallery({ data }) {
               alt={item.alt}
             />
           </Link>
+
+          <Link href={item.link} target="blank">
+            <Image
+              src={"/images/viewProject.svg"}
+              alt="Arete studio"
+              width={120}
+              height={120}
+              className="rounded-text absolute inset-x-0 bottom-0 mx-auto mb-[137px] md:mb-[101.54px] md:w-[120px] md:h-[120px]"
+            />
+          </Link>
+
           <div className={pragmaticaW01ExtendedBold.className}>
             <h2 className="text-white uppercase text-2xl absolute md:bottom-[82px] md:right-[31px] bottom-[61px] right-[23px] ">
               {item.title}
