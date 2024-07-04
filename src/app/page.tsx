@@ -54,27 +54,23 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-black flex z-10 w-full flex-col justify-center items-center ">
+    <div className="bg-black flex z-10 flex-col justify-center items-center ">
       <Hero />
       <main className="bg-PANTONE_5 z-30 w-full flex flex-col">
         {/* <section>Project slide</section> */}
         <section id="projects" className="w-full m-auto bg-red">
           <Gallery data={photos} />
         </section>
-        <section id="services" className="px-1 md:px-8 m-auto">
+        <section id="services" className="md:px-8 px-16">
           <Services />
         </section>
         <section id="projects" className="w-full h-full m-auto bg-red">
           <Gallery data={photos2} />
         </section>
-        <section id="about" className="mx-[64px]">
+        <section id="about" className="px-16">
           <About />
         </section>
-        <section
-          id="hr"
-          className="border-t-[2px] border-t-white mx-[44px] md:mx-[64px] my-[36px]"
-        ></section>
-        <section id="contact" className="mx-[64px]">
+        <section id="contact" className="px-16">
           <Contact />
         </section>
       </main>

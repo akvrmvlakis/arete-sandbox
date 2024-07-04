@@ -11,7 +11,7 @@ export default function About({}: Props) {
   return (
     <div className="grid md:grid-cols-2 pt-[112px] pb-[101px] md:pb-[119px]">
       <div className={pragmaticaW01ExtendedBold.className}>
-        <h1 className="md:text-xl font-bold text-white pb-[61px] md:pb-[0px] flex md:justify-start">
+        <h1 className="md:text-xl font-bold text-white pb-[36px] md:pb-[0px] flex md:justify-start">
           OUR MISSION
         </h1>
       </div>

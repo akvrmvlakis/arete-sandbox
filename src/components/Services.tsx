@@ -18,7 +18,7 @@ type Props = {};
 
 const Services = (props: Props) => {
   return (
-    <div className="flex flex-col PANTONE_5 px-16 pt-[112px] pb-[127px]">
+    <div className="flex flex-col PANTONE_5 pt-[112px] pb-[127px]">
       <div className="text-xl font-bold leading-7 text-white uppercase max-md:max-w-full">
         <div className={pragmaticaW01ExtendedBold.className}>OUR SERVICES</div>
       </div>

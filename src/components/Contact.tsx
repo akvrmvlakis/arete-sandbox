@@ -11,7 +11,7 @@ export default function Contact({}: Props) {
   return (
     <div className="grid md:grid-cols-2 pt-[112px] md:pb-[245px]">
       <div className={pragmaticaW01ExtendedBold.className}>
-        <h1 className="text-xl font-bold uppercase text-white pb-[36px] md:pb-[0px] flex md:justify-start">
+        <h1 className="text-xl font-bold uppercase text-white pb-[36px] leading-[25px] md:pb-[0px] flex md:justify-start">
           contact
         </h1>
       </div>

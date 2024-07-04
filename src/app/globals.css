@@ -57,7 +57,7 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .rounded-text:hover {
+  .rounded-text {
     animation: spin 6s infinite linear;
   }
 
