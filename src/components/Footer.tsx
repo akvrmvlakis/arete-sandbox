@@ -53,7 +53,7 @@ export default function Footer({}: Props) {
                 <div>ABOUT</div>
               </Link>
               <Link href="#t&c">
-                <div>T & C</div>
+                <div>T&C</div>
               </Link>
             </div>
           </div>
