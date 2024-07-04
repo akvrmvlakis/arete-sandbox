@@ -51,7 +51,7 @@ export default function Gallery({ data }) {
               alt="Arete studio"
               width={120}
               height={120}
-              className="rounded-text absolute inset-x-0 bottom-0 mx-auto mb-[137px] md:mb-[101.54px] md:w-[120px] md:h-[120px]"
+              className="rounded-text absolute inset-x-0 bottom-0 mx-auto mb-[137px] md:mb-[101.54px] w-[120px] h-[120px]"
             />
           </Link>
 
