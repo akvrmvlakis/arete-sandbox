@@ -2,10 +2,6 @@ import Link from "next/link";
 import React from "react";
 import localFont from "next/font/local";
 
-const helveticaNeueRegular = localFont({
-  src: "../assets/fonts/helvetica_neue_regular.woff2",
-});
-
 const pragmaticaW01ExtendedBold = localFont({
   src: "../assets/fonts/pragmatica-w01-extended-bold.woff2",
 });

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   const photos = [
@@ -54,7 +55,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-black flex z-10 flex-col justify-center items-center ">
+    <div className="bg-black flex z-10 flex-col justify-center items-center">
       <Hero />
       <main className="bg-PANTONE_5 z-30 w-full flex flex-col">
         {/* <section>Project slide</section> */}
@@ -75,6 +76,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <ContactForm />
     </div>
   );
 }
