@@ -74,7 +74,7 @@ export default function ContactForm({}: Props) {
                       quality={100}
                     />
                     <Link href="mailto:olia@aretestudio.co">
-                      info@aretestudio.co
+                      olia@aretestudio.co
                     </Link>
                   </div>
                   <div className="flex text-base items-center leading-6 my-4">
