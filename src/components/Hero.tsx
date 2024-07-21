@@ -33,15 +33,13 @@ const Hero = (props: Props) => {
             </div>
           </h1>
           <span className="rounded-text md:mt-[63px] mt-[200px] cursor-pointer">
-            <Link href="#contact">
-              <Image
-                src={"/images/roundtext.svg"}
-                alt="Arete studio"
-                width={120}
-                height={120}
-                className=" w-[120px] h-[120px]"
-              />
-            </Link>
+            <Image
+              src={"/images/roundtext.svg"}
+              alt="Arete studio"
+              width={120}
+              height={120}
+              className=" w-[120px] h-[120px]"
+            />
           </span>
         </div>
         <div className="video-container px-1 md:px-8 absolute flex-col items-center justify-center hidden xl:flex">

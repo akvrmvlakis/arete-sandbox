@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import localFont from "next/font/local";
+import { AppProps } from "next/app";
+import { ContactFormProvider } from "@/app/context/ContactFormContext"; // Ensure this path is correct
+import OpenContactFormButton from "@/components/OpenContactFormButton";
+import ContactForm from "@/components/ContactForm";
 
 const pragmaticaW01ExtendedBold = localFont({
   src: "../assets/fonts/pragmatica-w01-extended-bold.woff2",
@@ -12,7 +16,7 @@ const HelveticaNeueLight = localFont({
 
 type Props = {};
 
-const Services = (props: Props) => {
+const Services = ({ Component, pageProps }: AppProps) => {
   return (
     <div className="flex flex-col PANTONE_5 pt-[112px] pb-[127px]">
       <div className="text-xl font-bold leading-7 text-white uppercase max-md:max-w-full">
@@ -34,11 +38,14 @@ const Services = (props: Props) => {
                 </div>
               </div>
               <div className="flex gap-2 justify-center self-start mt-6 leading-[150%]">
-                <Link href="#contact">
-                  <div className={HelveticaNeueLight.className}>
-                    Get in touch
-                  </div>
-                </Link>
+                <div className={HelveticaNeueLight.className}>
+                  <ContactFormProvider>
+                    <div>
+                      <OpenContactFormButton />
+                      <ContactForm />
+                    </div>
+                  </ContactFormProvider>
+                </div>
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/995873ce168effd516d1f061a4cc47794eaa9edb01fc3435ecc7fd08fd4d7411?apiKey=dbbb3cb1ff2242fd8586eb6e7699f3b4&"
@@ -61,11 +68,14 @@ const Services = (props: Props) => {
                 </div>
               </div>
               <div className="flex gap-2 justify-center self-start mt-6 leading-[150%]">
-                <Link href="#contact">
-                  <div className={HelveticaNeueLight.className}>
-                    Get in touch
-                  </div>
-                </Link>
+                <div className={HelveticaNeueLight.className}>
+                  <ContactFormProvider>
+                    <div>
+                      <OpenContactFormButton />
+                      <ContactForm />
+                    </div>
+                  </ContactFormProvider>
+                </div>
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/995873ce168effd516d1f061a4cc47794eaa9edb01fc3435ecc7fd08fd4d7411?apiKey=dbbb3cb1ff2242fd8586eb6e7699f3b4&"
@@ -88,11 +98,14 @@ const Services = (props: Props) => {
                 </div>
               </div>
               <div className="flex gap-2 justify-center self-start mt-6 leading-[150%]">
-                <Link href="#contact">
-                  <div className={HelveticaNeueLight.className}>
-                    Get in touch
-                  </div>
-                </Link>
+                <div className={HelveticaNeueLight.className}>
+                  <ContactFormProvider>
+                    <div>
+                      <OpenContactFormButton />
+                      <ContactForm />
+                    </div>
+                  </ContactFormProvider>
+                </div>
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/995873ce168effd516d1f061a4cc47794eaa9edb01fc3435ecc7fd08fd4d7411?apiKey=dbbb3cb1ff2242fd8586eb6e7699f3b4&"

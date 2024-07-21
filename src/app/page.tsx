@@ -1,12 +1,14 @@
+"use client";
+
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import ContactForm from "@/components/ContactForm";
+import { AppProps } from "next/app";
 
-export default function Home() {
+export default function Home({ Component, pageProps }: AppProps) {
   const photos = [
     {
       itemImageSrc: "/projects/manor.jpeg",
@@ -76,7 +78,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-      <ContactForm />
     </div>
   );
 }
