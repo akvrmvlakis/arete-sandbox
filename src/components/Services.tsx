@@ -32,8 +32,8 @@ const Services = ({ Component, pageProps }: AppProps) => {
               </div>
               <div className="mt-6 leading-6 font-normal text-base max-md:max-w-full">
                 <div className={HelveticaNeueLight.className}>
-                  From concept to execution, we create stunning website tailored
-                  to your unique identity.
+                  From concept to execution, we create stunning website
+                  tailoreds to your unique identity.
                 </div>
               </div>
               <div className="flex gap-2 justify-center self-start mt-6 leading-[150%]">
