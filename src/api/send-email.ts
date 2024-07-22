@@ -27,7 +27,7 @@ export default async function handler(
 
   const mailOptions = {
     from: email,
-    to: process.env.BREVO_SMTP_USER,
+    to: "pro_balla2000@hotmail.com",
     subject: `Contact Form Submission from ${name}`,
     text: message,
   };
