@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import localFont from "next/font/local";
 import { AppProps } from "next/app";
