@@ -3,8 +3,8 @@ import "./globals.css";
 import { PrimeReactProvider } from "primereact/api";
 import localFont from "next/font/local";
 
-const helveticaNeueRegular = localFont({
-  src: "../assets/fonts/helvetica_neue_regular.woff2",
+const HelveticaNeueLight = localFont({
+  src: "../assets/fonts/HelveticaNeueLight.woff2",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <PrimeReactProvider>
       <html lang="en">
-        <body className={helveticaNeueRegular.className}>{children}</body>
+        <body className={HelveticaNeueLight.className}>{children}</body>
       </html>
     </PrimeReactProvider>
   );

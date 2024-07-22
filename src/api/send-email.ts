@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 // Use a free SMTP server like Ethereal for testing purposes
 const transporter = nodemailer.createTransport({
-  host: "smtp.ethereal.email",
+  host: "smtp-relay.brevo.com",
   port: 587,
   auth: {
     user: process.env.ETHEREAL_USER, // replace with your Ethereal user

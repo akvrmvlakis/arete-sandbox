@@ -49,7 +49,7 @@ const Form: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-4">
-        <label htmlFor="name" className="block text-white">
+        <label htmlFor="name" className="block text-white mb-1">
           Name
         </label>
         <input
@@ -61,7 +61,7 @@ const Form: React.FC = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="email" className="block text-white">
+        <label htmlFor="email" className="block text-white mb-1">
           Email
         </label>
         <input
@@ -74,7 +74,7 @@ const Form: React.FC = () => {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="message" className="block text-white">
+        <label htmlFor="message" className="block text-white mb-1">
           Message
         </label>
         <textarea
