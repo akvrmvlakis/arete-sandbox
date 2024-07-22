@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "axios": "^1.7.2",
     "next": "14.2.3",
     "nodemailer": "^6.9.14",
     "primereact": "^10.6.6",
@@ -22,6 +23,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",

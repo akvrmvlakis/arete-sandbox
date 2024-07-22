@@ -1,116 +1,107 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
+import axios from "axios";
 
-const Form: React.FC = () => {
+export default function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
+  const [status, setStatus] = useState("");
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!acceptTerms) {
-      setError("You must accept the terms.");
-      return;
-    }
-
-    setLoading(true);
-    setError("");
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("");
 
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
+      const response = await axios.post("/api/send-email", {
+        name,
+        email,
+        message,
+        acceptTerms,
       });
 
-      if (response.ok) {
-        setSuccess(true);
-        setName("");
-        setEmail("");
-        setMessage("");
-        setAcceptTerms(false);
-      } else {
-        const data = await response.json();
-        setError(data.error || "An error occurred while sending your message.");
+      if (response.status === 200) {
+        setStatus("Email sent successfully!");
       }
     } catch (error) {
-      setError("An error occurred while sending your message.");
-    } finally {
-      setLoading(false);
+      setStatus("Error sending email.");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
       <div className="mb-4">
-        <label htmlFor="name" className="block text-white mb-1">
+        <label
+          className="block text-white text-sm font-bold mb-2"
+          htmlFor="name"
+        >
           Name
         </label>
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
           type="text"
-          className="w-full px-3 py-2 bg-white text-black"
+          placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          required
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="email" className="block text-white mb-1">
+        <label
+          className="block text-white text-sm font-bold mb-2"
+          htmlFor="email"
+        >
           Email
         </label>
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="email"
           type="email"
-          className="w-full px-3 py-2 bg-white text-black"
+          placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="message" className="block text-white mb-1">
+        <label
+          className="block text-white text-sm font-bold mb-2"
+          htmlFor="message"
+        >
           Message
         </label>
         <textarea
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="message"
-          className="w-full px-3 py-2 bg-white text-black min-h-[150px]"
+          placeholder="Your Message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          required
         />
       </div>
       <div className="mb-4">
-        <label className="flex items-center">
+        <label
+          className="block text-white text-sm font-bold mb-2"
+          htmlFor="acceptTerms"
+        >
           <input
+            className="mr-2 leading-tight"
+            id="acceptTerms"
             type="checkbox"
-            className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
             checked={acceptTerms}
             onChange={(e) => setAcceptTerms(e.target.checked)}
           />
-          <span className="ml-2 text-white">
-            I accept the & <Link href="#">terms</Link>
-          </span>
+          I accept the terms
         </label>
       </div>
-      <button
-        type="submit"
-        className="px-3 py-2 bg-white text-black"
-        disabled={loading}
-      >
-        {loading ? "Sending..." : "Submit"}
-      </button>
-      {success && (
-        <p className="text-green-500 mt-4">Message sent successfully!</p>
-      )}
-      {error && <p className="text-red-500 mt-4">{error}</p>}
+      <div className="mb-4">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+          disabled={!acceptTerms}
+        >
+          Submit
+        </button>
+      </div>
+      {status && <p className="text-white">{status}</p>}
     </form>
   );
-};
-
-export default Form;
+}

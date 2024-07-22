@@ -1,41 +1,43 @@
-import nodemailer from "nodemailer";
+// src/pages/api/send-email.ts
 import { NextApiRequest, NextApiResponse } from "next";
+import nodemailer from "nodemailer";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method !== "POST") {
-    res.setHeader("Allow", ["POST"]);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end();
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, message, acceptTerms } = req.body;
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: "All fields are required." });
+  if (!acceptTerms) {
+    return res.status(400).json({ error: "You must accept the terms." });
   }
 
   const transporter = nodemailer.createTransport({
-    host: "smtp-relay.brevo.com",
-    port: 587,
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || "587", 10),
+    secure: false,
     auth: {
-      user: process.env.BREVO_SMTP_USER,
-      pass: process.env.BREVO_SMTP_PASS,
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
-  const mailOptions = {
-    from: email,
-    to: "pro_balla2000@hotmail.com",
-    subject: `Contact Form Submission from ${name}`,
-    text: message,
-  };
-
   try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Email sent successfully" });
+    await transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to: "your_destination_email@example.com",
+      subject: `New Contact Form Submission from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
+    });
+
+    return res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
-    res.status(500).json({ error: "Error sending email" });
+    console.error(error);
+    return res.status(500).json({ error: "Error sending email" });
   }
 }
