@@ -32,14 +32,11 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
       <div className="mb-4">
-        <label
-          className="block text-white text-sm font-bold mb-2"
-          htmlFor="name"
-        >
+        <label className="block text-white text-sm mb-2" htmlFor="name">
           Name
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="w-full py-3 px-3 bg-white text-black"
           id="name"
           type="text"
           placeholder="Your Name"
@@ -48,14 +45,11 @@ export default function Form() {
         />
       </div>
       <div className="mb-4">
-        <label
-          className="block text-white text-sm font-bold mb-2"
-          htmlFor="email"
-        >
+        <label className="block text-white text-sm mb-2" htmlFor="email">
           Email
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="w-full py-3 px-3 text-black bg-white"
           id="email"
           type="email"
           placeholder="Your Email"
@@ -64,14 +58,11 @@ export default function Form() {
         />
       </div>
       <div className="mb-4">
-        <label
-          className="block text-white text-sm font-bold mb-2"
-          htmlFor="message"
-        >
+        <label className="block text-white text-sm mb-2" htmlFor="message">
           Message
         </label>
         <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="w-full py-3 px-3 text-black bg-white min-h-[100px]"
           id="message"
           placeholder="Your Message"
           value={message}
@@ -79,12 +70,9 @@ export default function Form() {
         />
       </div>
       <div className="mb-4">
-        <label
-          className="block text-white text-sm font-bold mb-2"
-          htmlFor="acceptTerms"
-        >
+        <label className="block text-white text-sm" htmlFor="acceptTerms">
           <input
-            className="mr-2 leading-tight"
+            className="mr-2"
             id="acceptTerms"
             type="checkbox"
             checked={acceptTerms}
@@ -95,7 +83,7 @@ export default function Form() {
       </div>
       <div className="mb-4">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className=" text-black bg-white py-2 px-4"
           type="submit"
           disabled={!acceptTerms}
         >
