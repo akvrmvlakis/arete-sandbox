@@ -29,7 +29,7 @@ export default async function handler(
   try {
     await transporter.sendMail({
       from: process.env.SMTP_USER,
-      to: "your_destination_email@example.com",
+      to: "pro_balla2000@hotmail.com",
       subject: `New Contact Form Submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
