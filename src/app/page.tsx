@@ -1,14 +1,11 @@
-"use client";
-
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import { AppProps } from "next/app";
 
-export default function Home({}: AppProps) {
+export default function Home() {
   const photos = [
     {
       itemImageSrc: "/projects/manor.jpeg",

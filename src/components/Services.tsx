@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import { ContactFormProvider } from "@/app/context/ContactFormContext"; // Ensure this path is correct
 import OpenContactFormButton from "@/components/OpenContactFormButton";
 import ContactForm from "@/components/ContactForm";
+import { AppProps } from "next/app";
 
 const pragmaticaW01ExtendedBold = localFont({
   src: "../assets/fonts/pragmatica-w01-extended-bold.woff2",
