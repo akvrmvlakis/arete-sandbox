@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import localFont from "next/font/local";
 import { ContactFormProvider } from "@/app/context/ContactFormContext"; // Ensure this path is correct
