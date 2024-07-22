@@ -1,6 +1,5 @@
 import React from "react";
 import localFont from "next/font/local";
-import { AppProps } from "next/app";
 import { ContactFormProvider } from "@/app/context/ContactFormContext"; // Ensure this path is correct
 import OpenContactFormButton from "@/components/OpenContactFormButton";
 import ContactForm from "@/components/ContactForm";
@@ -14,9 +13,7 @@ const HelveticaNeueLight = localFont({
   src: "../assets/fonts/HelveticaNeueLight.woff2",
 });
 
-type Props = {};
-
-const Services = ({ Component, pageProps }: AppProps) => {
+const Services = () => {
   return (
     <div className="flex flex-col PANTONE_5 pt-[112px] pb-[127px]">
       <div className="text-xl font-bold leading-7 text-white uppercase max-md:max-w-full">
