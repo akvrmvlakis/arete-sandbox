@@ -24,6 +24,7 @@ export default function Form() {
         setStatus("Email sent successfully!");
       }
     } catch (error) {
+      console.error("Error:", error);
       setStatus("Error sending email.");
     }
   };
@@ -38,7 +39,7 @@ export default function Form() {
           Name
         </label>
         <input
-          className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
           type="text"
           placeholder="Your Name"
@@ -54,7 +55,7 @@ export default function Form() {
           Email
         </label>
         <input
-          className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="email"
           type="email"
           placeholder="Your Email"
@@ -70,7 +71,7 @@ export default function Form() {
           Message
         </label>
         <textarea
-          className="w-full py-2 px-3 text-black leading-tight min-h-[100px]"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="message"
           placeholder="Your Message"
           value={message}
@@ -94,14 +95,14 @@ export default function Form() {
       </div>
       <div className="mb-4">
         <button
-          className="bg-white text-black font-bold py-2 px-4"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
           disabled={!acceptTerms}
         >
-          Submit
+          Send
         </button>
       </div>
-      {status && <p className="text-white">{status}</p>}
+      {status && <div className="mt-4 text-white">{status}</div>}
     </form>
   );
 }
