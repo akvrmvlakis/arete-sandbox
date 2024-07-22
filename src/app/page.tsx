@@ -8,7 +8,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import { AppProps } from "next/app";
 
-export default function Home({ Component, pageProps }: AppProps) {
+export default function Home({}: AppProps) {
   const photos = [
     {
       itemImageSrc: "/projects/manor.jpeg",

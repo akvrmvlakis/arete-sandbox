@@ -1,10 +1,5 @@
 // components/Form.tsx
 import React from "react";
-import localFont from "next/font/local";
-
-const pragmaticaW01ExtendedBold = localFont({
-  src: "../assets/fonts/pragmatica-w01-extended-bold.woff2",
-});
 
 const Form: React.FC = () => {
   return (
