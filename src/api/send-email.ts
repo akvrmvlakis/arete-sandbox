@@ -1,38 +1,41 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
-
-// Use a free SMTP server like Ethereal for testing purposes
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  auth: {
-    user: process.env.ETHEREAL_USER, // replace with your Ethereal user
-    pass: process.env.ETHEREAL_PASS, // replace with your Ethereal password
-  },
-});
+import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const { name, email, message } = req.body;
+  if (req.method !== "POST") {
+    res.setHeader("Allow", ["POST"]);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
 
-    try {
-      await transporter.sendMail({
-        from: email,
-        to: process.env.RECIPIENT_EMAIL, // replace with your email
-        subject: `New contact form submission from ${name}`,
-        text: message,
-        html: `<p>${message}</p>`,
-      });
+  const { name, email, message } = req.body;
 
-      res.status(200).json({ message: "Email sent successfully" });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      res.status(500).json({ error: "Error sending email" });
-    }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp-relay.sendinblue.com",
+    port: 587,
+    auth: {
+      user: process.env.BREVO_SMTP_USER,
+      pass: process.env.BREVO_SMTP_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: email,
+    to: process.env.BREVO_SMTP_USER,
+    subject: `Contact Form Submission from ${name}`,
+    text: message,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: "Email sent successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Error sending email" });
   }
 }
