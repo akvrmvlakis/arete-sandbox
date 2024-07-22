@@ -94,7 +94,7 @@ const Form: React.FC = () => {
             onChange={(e) => setAcceptTerms(e.target.checked)}
           />
           <span className="ml-2 text-white">
-            I accept the <Link href="#">terms</Link>
+            I accept the & <Link href="#">terms</Link>
           </span>
         </label>
       </div>
