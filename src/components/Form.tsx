@@ -13,7 +13,7 @@ export default function Form() {
     setStatus("");
 
     try {
-      const response = await axios.post("api/send-email", {
+      const response = await axios.post("api/send-email/", {
         name,
         email,
         message,
