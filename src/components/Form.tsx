@@ -13,7 +13,7 @@ export default function Form() {
     setStatus("");
 
     try {
-      const response = await axios.post("/api/send-email", {
+      const response = await axios.post("api/send-email", {
         name,
         email,
         message,
@@ -70,7 +70,10 @@ export default function Form() {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-white text-sm" htmlFor="acceptTerms">
+        <label
+          className="flex items-center text-white text-sm"
+          htmlFor="acceptTerms"
+        >
           <input
             className="mr-2"
             id="acceptTerms"

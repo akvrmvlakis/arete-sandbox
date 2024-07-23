@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export async function POST(req: NextRequest) {
   try {
@@ -22,7 +25,7 @@ export async function POST(req: NextRequest) {
     const transporter = nodemailer.createTransport({
       host: process.env.BREVO_SMTP_HOST,
       port: parseInt(process.env.BREVO_SMTP_PORT || "587", 10),
-      secure: false,
+      secure: false, // Make sure secure is set correctly based on your needs
       auth: {
         user: process.env.BREVO_SMTP_USER,
         pass: process.env.BREVO_SMTP_PASS,
