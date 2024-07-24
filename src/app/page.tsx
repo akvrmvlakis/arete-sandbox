@@ -11,21 +11,21 @@ export default function Home() {
       itemImageSrc: "/projects/manor.jpeg",
       thumbnailImageSrc: "/projects/manor.jpeg",
       alt: "Manor media",
-      title: "Manor media",
+      title: "Manor.",
       link: "https://manor.studio/",
     },
     {
       itemImageSrc: "/projects/ink.jpeg",
       thumbnailImageSrc: "/projects/ink.jpeg",
       alt: "Ink",
-      title: "Ink",
+      title: "Ink.",
       link: "https://www.ink.studio/",
     },
     {
       itemImageSrc: "/projects/thog.jpeg",
       thumbnailImageSrc: "/projects/thog.jpeg",
       alt: "Thog",
-      title: "Thog",
+      title: "Thog.",
       link: "https://thehandofgod.co/",
     },
   ];
@@ -41,7 +41,7 @@ export default function Home() {
       itemImageSrc: "/projects/ink1.jpeg",
       thumbnailImageSrc: "/projects/ink1.jpeg",
       alt: "Ink",
-      title: "Ink",
+      title: "ink.studio",
       link: "https://www.ink.studio/",
     },
     {
@@ -54,26 +54,23 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-black flex z-10 w-full flex-col justify-center items-center bg-PANTONE_5">
+    <div className="bg-black flex z-10 flex-col justify-center items-center">
       <Hero />
-      <main className="bg-PANTONE_5 z-30 w-full flex flex-col z-10 text-[Helvetica Neue Regular]">
+      <main className="bg-PANTONE_5 z-30 w-full flex flex-col">
         {/* <section>Project slide</section> */}
-        <section id="projects" className="w-full m-auto  bg-red">
+        <section id="projects" className="w-full m-auto bg-red">
           <Gallery data={photos} />
         </section>
-        <section id="services" className="px-1 md:px-8 m-auto">
+        <section id="services" className="md:px-8 px-16">
           <Services />
         </section>
         <section id="projects" className="w-full h-full m-auto bg-red">
           <Gallery data={photos2} />
         </section>
-        <section id="about" className="px-1 w-full md:px-8 m-auto">
+        <section id="about" className="px-16">
           <About />
         </section>
-        <section
-          id="contact"
-          className="w-full px-1 md:px-8 m-auto border-t-[2px] h-[80vh] border-t-white"
-        >
+        <section id="contact" className="px-16">
           <Contact />
         </section>
       </main>

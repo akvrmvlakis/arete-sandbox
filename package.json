@@ -9,7 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@types/nodemailer-smtp-transport": "^2.7.8",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "next": "14.2.3",
+    "nodemailer": "^6.9.14",
     "primereact": "^10.6.6",
     "react": "^18",
     "react-dom": "^18",
@@ -17,7 +25,9 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
