@@ -21,6 +21,7 @@
     "primereact": "^10.6.6",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.2",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1"
   },

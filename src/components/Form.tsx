@@ -1,99 +1,113 @@
-import { useState } from "react";
-import axios from "axios";
+"use client";
 
-export default function Form() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [acceptTerms, setAcceptTerms] = useState(false);
-  const [status, setStatus] = useState("");
+import { FC, useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { sendEmail } from "@/app/utils/send-email";
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("");
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
+const Form: FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setIsLoading(true);
     try {
-      const response = await axios.post("api/send-email/", {
-        name,
-        email,
-        message,
-        acceptTerms,
-      });
-
-      if (response.status === 200) {
-        setStatus("Email sent successfully!");
-      }
+      await sendEmail(data);
+      setSubmitStatus("Email sent successfully!");
     } catch (error) {
-      console.error("Error:", error);
-      setStatus("Error sending email.");
+      setSubmitStatus("Failed to send email. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
-      <div className="mb-4">
-        <label className="block text-white text-sm mb-2" htmlFor="name">
-          Name
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="mb-5">
+        <label
+          htmlFor="name"
+          className="mb-3 block text-base font-medium text-white"
+        >
+          Full Name
         </label>
         <input
-          className="w-full py-3 px-3 bg-white text-black"
-          id="name"
           type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          placeholder="Full Name"
+          className={`w-full border ${
+            errors.name ? "border-red-500" : "border-gray-300"
+          } bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md`}
+          {...register("name", { required: "Name is required" })}
         />
+        {errors.name && (
+          <p className="text-red-500 text-sm">{errors.name.message}</p>
+        )}
       </div>
-      <div className="mb-4">
-        <label className="block text-white text-sm mb-2" htmlFor="email">
-          Email
+      <div className="mb-5">
+        <label
+          htmlFor="email"
+          className="mb-3 block text-base font-medium text-white"
+        >
+          Email Address
         </label>
         <input
-          className="w-full py-3 px-3 text-black bg-white"
-          id="email"
           type="email"
-          placeholder="Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          placeholder="example@domain.com"
+          className={`w-full border ${
+            errors.email ? "border-red-500" : "border-gray-300"
+          } bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md`}
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Invalid email address",
+            },
+          })}
         />
+        {errors.email && (
+          <p className="text-red-500 text-sm">{errors.email.message}</p>
+        )}
       </div>
-      <div className="mb-4">
-        <label className="block text-white text-sm mb-2" htmlFor="message">
+      <div className="mb-5">
+        <label
+          htmlFor="message"
+          className="mb-3 block text-base font-medium text-white"
+        >
           Message
         </label>
         <textarea
-          className="w-full py-3 px-3 text-black bg-white min-h-[100px]"
-          id="message"
-          placeholder="Your Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+          rows={4}
+          placeholder="Type your message"
+          className={`w-full resize-none border ${
+            errors.message ? "border-red-500" : "border-gray-300"
+          } bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md`}
+          {...register("message", { required: "Message is required" })}
+        ></textarea>
+        {errors.message && (
+          <p className="text-red-500 text-sm">{errors.message.message}</p>
+        )}
       </div>
-      <div className="mb-4">
-        <label
-          className="flex items-center text-white text-sm"
-          htmlFor="acceptTerms"
-        >
-          <input
-            className="mr-2"
-            id="acceptTerms"
-            type="checkbox"
-            checked={acceptTerms}
-            onChange={(e) => setAcceptTerms(e.target.checked)}
-          />
-          I accept the terms
-        </label>
-      </div>
-      <div className="mb-4">
+      <div>
         <button
-          className=" text-black bg-white py-2 px-4"
           type="submit"
-          disabled={!acceptTerms}
+          className="hover:shadow-form  bg-white py-3 px-8 text-base font-semibold text-black outline-none"
+          disabled={isLoading}
         >
-          Send
+          {isLoading ? "Sending..." : "Submit"}
         </button>
       </div>
-      {status && <div className="mt-4 text-white">{status}</div>}
+      {submitStatus && <p className="mt-3 text-sm">{submitStatus}</p>}
     </form>
   );
-}
+};
+
+export default Form;
