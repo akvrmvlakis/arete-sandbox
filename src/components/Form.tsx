@@ -1,13 +1,14 @@
 "use client";
 
 import { FC, useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { sendEmail } from "@/app/utils/send-email";
 
 export type FormData = {
   name: string;
   email: string;
   message: string;
+  termsAccepted: boolean;
 };
 
 const Form: FC = () => {
@@ -16,88 +17,96 @@ const Form: FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null); // State for success message
+  const [errorMessage, setErrorMessage] = useState<string | null>(null); // State for error message
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    setIsLoading(true);
+  async function onSubmit(data: FormData) {
+    if (!data.termsAccepted) {
+      alert("You must accept the terms and conditions to submit the form.");
+      return;
+    }
+
     try {
       await sendEmail(data);
-      setSubmitStatus("Email sent successfully!");
+      setSuccessMessage("Email sent successfully!"); // Set success message
+      setErrorMessage(null); // Clear any previous error messages
     } catch (error) {
-      setSubmitStatus("Failed to send email. Please try again.");
-    } finally {
-      setIsLoading(false);
+      setErrorMessage("An error occurred while sending the email."); // Set error message
+      setSuccessMessage(null); // Clear any previous success messages
     }
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-5">
-        <label htmlFor="name" className="mb-2 block text-sm text-white">
-          Full Name
-        </label>
-        <input
-          type="text"
-          placeholder="Full Name"
-          className={`w-full border ${
-            errors.name ? "border-red-500" : "border-gray-300"
-          } bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md`}
-          {...register("name", { required: "Name is required" })}
-        />
-        {errors.name && (
-          <p className="text-red-500 text-sm">{errors.name.message}</p>
-        )}
-      </div>
-      <div className="mb-5">
-        <label htmlFor="email" className="mb-2 block text-sm text-white">
-          Email Address
-        </label>
-        <input
-          type="email"
-          placeholder="example@domain.com"
-          className={`w-full border ${
-            errors.email ? "border-red-500" : "border-gray-300"
-          } bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md`}
-          {...register("email", {
-            required: "Email is required",
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: "Invalid email address",
-            },
-          })}
-        />
-        {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
-        )}
-      </div>
-      <div className="mb-5">
-        <label htmlFor="message" className="mb-2 block text-sm text-white">
-          Message
-        </label>
-        <textarea
-          rows={4}
-          placeholder="Type your message"
-          className={`w-full resize-none border ${
-            errors.message ? "border-red-500" : "border-gray-300"
-          } bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md`}
-          {...register("message", { required: "Message is required" })}
-        ></textarea>
-        {errors.message && (
-          <p className="text-red-500 text-sm">{errors.message.message}</p>
-        )}
-      </div>
-      <div>
-        <button
-          type="submit"
-          className="hover:shadow-form  bg-white py-3 px-8 text-base font-semibold text-black outline-none"
-          disabled={isLoading}
-        >
-          {isLoading ? "Sending..." : "Submit"}
-        </button>
-      </div>
-      {submitStatus && <p className="mt-3 text-sm">{submitStatus}</p>}
-    </form>
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mb-5">
+          <label htmlFor="name" className="mb-2 block text-sm text-white">
+            Full Name
+          </label>
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+            {...register("name", { required: "Full Name is required" })}
+          />
+          {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+        </div>
+        <div className="mb-5">
+          <label htmlFor="email" className="mb-2 block text-sm text-white">
+            Email Address
+          </label>
+          <input
+            type="email"
+            placeholder="example@domain.com"
+            className="w-full border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+            {...register("email", { required: "Email Address is required" })}
+          />
+          {errors.email && (
+            <p className="text-red-500">{errors.email.message}</p>
+          )}
+        </div>
+        <div className="mb-5">
+          <label htmlFor="message" className="mb-2 block text-sm  text-white">
+            Message
+          </label>
+          <textarea
+            rows={4}
+            placeholder="Type your message"
+            className="w-full resize-none border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+            {...register("message", { required: "Message is required" })}
+          ></textarea>
+          {errors.message && (
+            <p className="text-red-500">{errors.message.message}</p>
+          )}
+        </div>
+        <div className="mb-5">
+          <input
+            type="checkbox"
+            id="termsAccepted"
+            {...register("termsAccepted", {
+              required: "You must accept the terms and conditions",
+            })}
+          />
+          <label htmlFor="termsAccepted" className="ml-2 text-sm  text-white">
+            I accept the{" "}
+            <a href="/terms" className="text-white underline">
+              terms and conditions
+            </a>
+            .
+          </label>
+          {errors.termsAccepted && (
+            <p className="text-red-500">{errors.termsAccepted.message}</p>
+          )}
+        </div>
+        <div>
+          <button className="hover:shadow-form bg-white py-3 px-8 text-base font-semibold text-black outline-none">
+            Submit
+          </button>
+        </div>
+      </form>
+      {successMessage && <p className="mt-4 text-white">{successMessage}</p>}
+      {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
+    </div>
   );
 };
 
