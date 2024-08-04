@@ -34,10 +34,7 @@ const Form: FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-5">
-        <label
-          htmlFor="name"
-          className="mb-3 block text-base font-medium text-white"
-        >
+        <label htmlFor="name" className="mb-2 block text-sm text-white">
           Full Name
         </label>
         <input
@@ -53,10 +50,7 @@ const Form: FC = () => {
         )}
       </div>
       <div className="mb-5">
-        <label
-          htmlFor="email"
-          className="mb-3 block text-base font-medium text-white"
-        >
+        <label htmlFor="email" className="mb-2 block text-sm text-white">
           Email Address
         </label>
         <input
@@ -78,10 +72,7 @@ const Form: FC = () => {
         )}
       </div>
       <div className="mb-5">
-        <label
-          htmlFor="message"
-          className="mb-3 block text-base font-medium text-white"
-        >
+        <label htmlFor="message" className="mb-2 block text-sm text-white">
           Message
         </label>
         <textarea
