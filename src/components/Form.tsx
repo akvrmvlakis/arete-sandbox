@@ -17,8 +17,9 @@ const Form: FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-  const [successMessage, setSuccessMessage] = useState<string | null>(null); // State for success message
-  const [errorMessage, setErrorMessage] = useState<string | null>(null); // State for error message
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   async function onSubmit(data: FormData) {
     if (!data.termsAccepted) {
@@ -26,13 +27,16 @@ const Form: FC = () => {
       return;
     }
 
+    setLoading(true);
     try {
       await sendEmail(data);
-      setSuccessMessage("Email sent successfully!"); // Set success message
-      setErrorMessage(null); // Clear any previous error messages
+      setSuccessMessage("Email sent successfully!");
+      setErrorMessage(null);
     } catch (error) {
-      setErrorMessage("An error occurred while sending the email."); // Set error message
-      setSuccessMessage(null); // Clear any previous success messages
+      setErrorMessage("An error occurred while sending the email.");
+      setSuccessMessage(null);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -66,7 +70,7 @@ const Form: FC = () => {
           )}
         </div>
         <div className="mb-5">
-          <label htmlFor="message" className="mb-2 block text-sm  text-white">
+          <label htmlFor="message" className="mb-2 block text-sm text-white">
             Message
           </label>
           <textarea
@@ -87,7 +91,10 @@ const Form: FC = () => {
               required: "You must accept the terms and conditions",
             })}
           />
-          <label htmlFor="termsAccepted" className="ml-2 text-sm  text-white">
+          <label
+            htmlFor="termsAccepted"
+            className="ml-2 text-sm font-medium text-white"
+          >
             I accept the{" "}
             <a href="/terms" className="text-white underline">
               terms and conditions
@@ -99,8 +106,12 @@ const Form: FC = () => {
           )}
         </div>
         <div>
-          <button className="hover:shadow-form bg-white py-3 px-8 text-base font-semibold text-black outline-none">
-            Submit
+          <button
+            type="submit"
+            className="hover:shadow-form bg-white py-3 px-8 text-base font-semibold text-black outline-none"
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Submit"}
           </button>
         </div>
       </form>
