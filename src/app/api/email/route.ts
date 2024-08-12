@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     // Define mail options
     const mailOptions = {
-      from: "oliaihunter@gmail.com", // Use the visitor's email address as the sender
+      from: "olia@aretestudio.co", // Use the visitor's email address as the sender
       to: "olia@aretestudio.co",
       subject: `Message from ${name} (${email})`,
       text: message,
