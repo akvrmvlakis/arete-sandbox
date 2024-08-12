@@ -3,7 +3,7 @@
 import { FormData } from "@/components/Form";
 
 export async function sendEmail(data: FormData) {
-  const response = await fetch("https://arete-sandbox.vercel.app/api/contact", {
+  const response = await fetch("api/email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
